@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Sysfoo Demo App by School of Devops</title>
+		<title>Sysfoo Demo App</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -42,7 +42,7 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#about">School of Devops</a></li>
+								<li><a href="#about">Sysfoo Demo App</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -55,13 +55,13 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/sodc_banner.jpg" alt="" /></span>
-								<p>School of Devops is a leading provider of devops trainings and offers variety of courses which focus on Infrastrucrture as a Code, Container and Docker, Continuous Delivery, Cloud. To learn more visit http://www.schoolofdevops.com.</p>
+								<p>Sysfoo demo app is to demonstrate the DevOps pipeline</p>
 							</article>
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copycopyrights; Designed by Meenachi</a>.</p>
+						<p class="copyright">&copycopyrights; 2022</a>.</p>
 					</footer>
 
 			</div>
