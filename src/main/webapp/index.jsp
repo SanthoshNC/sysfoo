@@ -55,7 +55,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/sodc_banner.jpg" alt="" /></span>
-								<p>Sysfoo demo app is to demonstrate the DevOps pipeline</p>
+								<p>Sysfoo demo app is to demonstrate the DevOps pipeline CICD</p>
 							</article>
 					</div>
 
