@@ -1,0 +1,17 @@
+name: sysfoo-ci-pipeline
+on: [push]
+jobs:
+  build-sysfoo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout or Code Clone
+        uses: actions/checkout@v4
+
+      - name: Run mvn clean & mvn package
+        run: | 
+          mvn clean
+          mvn package
+
+      - name: Run ls command
+        run: ls -lrt
+      
