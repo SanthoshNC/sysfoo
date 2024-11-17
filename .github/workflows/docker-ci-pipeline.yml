@@ -76,3 +76,13 @@ jobs:
           minikube service sysfoo-service --url
           echo -n "------------------opening the service-----------------"
           curl $(minikube service sysfoo-service --url)
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: devsecops
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: 'Deployed Sysfoo application :rocket:'
+          SLACK_TITLE: Deployment Status
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: Sysfoo
