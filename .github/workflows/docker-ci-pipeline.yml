@@ -73,5 +73,5 @@ jobs:
         run: |
           minikube service list
           minikube service sysfoo-service --url
-          echo -n "------------------opening the service------------------"
+          echo -n "------------------opening the service-----------------"
           curl $(minikube service sysfoo-service --url)
