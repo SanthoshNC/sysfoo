@@ -70,6 +70,15 @@ jobs:
           sarif_file: trivy-results.sarif
       - name: Docker Push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/sysfoo:v2
+  dast-scanning:
+    runs-on: ubuntu-latest
+    needs:
+      - build-sysfoo-docker
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.12.0
+        with:
+          target: 'https://ginandjuice.shop/'
   deploy-in-k8s:
     runs-on: ubuntu-latest
     needs:
