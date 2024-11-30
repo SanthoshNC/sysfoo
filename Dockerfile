@@ -1,6 +1,6 @@
 FROM maven:3.6.3-jdk-11-slim as build
-WORKDIR /opt/demo
-COPY . /opt/demo
+WORKDIR /opt/demo-chg
+COPY . /opt/demo-chg
 RUN mvn package -DskipTests
 
 FROM tomcat:jre8-openjdk-slim-buster as run
