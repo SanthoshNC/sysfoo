@@ -10,7 +10,7 @@ jobs:
     
     steps:
       - name: Code Checkout or Code Clone
-        uses: actions/checkout@4
+        uses: actions/checkout@v4
 
       - name: Run mvn test
         run: mvn test
