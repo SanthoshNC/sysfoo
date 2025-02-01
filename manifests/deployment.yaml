@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sysfoo-deployment
+  labels:
+    app: sysfoo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sysfoo
+  template:
+    metadata:
+      labels:
+        app: sysfoo
+    spec:
+      containers:
+      - name: sysfoo
+        image: santhoshnc/sysfoo:v1
+        ports:
+        - containerPort: 8080
