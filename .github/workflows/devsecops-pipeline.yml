@@ -75,6 +75,33 @@ jobs:
           category: aqua-trivy    
           
       - name: Docker Push Step
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/sysfoo:v1   
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/sysfoo:v1
+        
+  deploy-k8s:
+    needs:
+      - build-sysfoo
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Code Checkout or Code Clone
+        uses: actions/checkout@v4
+        
+      - name: Start minikube
+        uses: medyagh/setup-minikube@latest
+
+      - name: Try the cluster!
+        run: kubectl get pods -A
+
+      - name: Deploy to Minikube
+        run: |
+          kubectl apply -f manifests/deployment.yaml
+          kubectl apply -f manifests/service.yaml
+          kubectl wait --for-condition=ready pod -l app=sysfoo
+
+      - name: Test Service URLs
+        run: |
+          minikube service list
+          minikube service sysfoo-service --url
+          echo "------------------opening the service------------------"
+          curl $(minikube service sysfoo-service --url)
       
