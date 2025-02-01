@@ -96,7 +96,7 @@ jobs:
         run: |
           kubectl apply -f manifests/deployment.yaml
           kubectl apply -f manifests/service.yaml
-          kubectl wait --for-condition=ready pod -l app=sysfoo
+          kubectl wait --for=condition=ready pod -l app=sysfoo
 
       - name: Test Service URLs
         run: |
