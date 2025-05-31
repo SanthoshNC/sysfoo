@@ -21,7 +21,7 @@ jobs:
       - name: Run ls command
         run: ls -lrt
 
-      - name: Upload artifact to GitHub Packages
+      - name: Upload artifact to GitHub Registry
         uses: actions/upload-artifact@v4
         with:
           name: sysfoo
