@@ -27,6 +27,7 @@ jobs:
           path: target/sysfoo.war
           
   upload-sysfoo:
+    needs: build-sysfoo
     runs-on: ubuntu-latest
     permissions:
       contents: read
