@@ -7,10 +7,6 @@ on:
 jobs:
   build-sysfoo:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
       - name: Code Checkout or Code Clone
         uses: actions/checkout@v4
@@ -29,7 +25,17 @@ jobs:
         with:
           name: sysfoo
           path: target/sysfoo.war
+          
+  upload-sysfoo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
+    steps:
+      - name: Code Checkout or Code Clone
+        uses: actions/checkout@v4
+        
       - uses: actions/setup-java@v4
         with:
           java-version: '11'
