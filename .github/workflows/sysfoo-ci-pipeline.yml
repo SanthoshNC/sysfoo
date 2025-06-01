@@ -30,6 +30,11 @@ jobs:
           name: sysfoo
           path: target/sysfoo.war
 
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
