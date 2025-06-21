@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: sysfoo
-        image: santhoshnc/sysfoo:latest
+        image: santhoshnc/sysfoo:v1
         ports:
         - containerPort: 8080
