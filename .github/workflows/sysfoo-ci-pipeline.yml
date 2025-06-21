@@ -26,6 +26,11 @@ jobs:
       - name: Run mvn clean & mvn package
         run: mvn clean package
 
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
       - name: Run ls command
         run: ls -lrt
 
