@@ -1,4 +1,5 @@
 [[rules]]
+  id = "allow-sonar-project-key"
   description = "Ignore sonar.projectKey false positive"
   regex = '''(?i)-Dsonar\.projectKey=.*'''
   tags = ["false-positive", "sonarqube"]
