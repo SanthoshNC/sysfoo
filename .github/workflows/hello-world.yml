@@ -18,7 +18,7 @@ jobs:
       - name: SAST
         run: echo "SAST"
       - name: Docker Image
-        run: echo "Docker Image"
+        run: docker build -t habeebr1972/cf-sysfoo .
       - name: Docker Hub
         run: echo "Docker Hub"
       - name: DAST - ZAP
