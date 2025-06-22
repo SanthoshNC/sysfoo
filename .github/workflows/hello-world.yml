@@ -15,8 +15,18 @@ jobs:
       - name: Secret Scanning
         uses: gitleaks/gitleaks-action@v2
         
-      - name: SAST
-        run: echo "SAST"
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@v3.1.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=santhosh-devops-demo
+            -Dsonar.projectKey=santhosh-devops-demo_sysfoo
+            -Dsonar.sources=.
+            -Dsonar.verbose=true
+            -Dsonar.language=java
+            -Dsonar.java.binaries=./target/classes
         
       - name: Docker Image
         run: docker build -t santhoshnc/cf-sysfoo .
