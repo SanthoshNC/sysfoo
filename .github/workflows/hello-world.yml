@@ -35,6 +35,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Secret Scanning
+        uses: gitleaks/gitleaks-action@v2
+        
+
+  
           
       - name: DockerHub
         run: docker push habeebr1972/cf-sysfoo:latest
