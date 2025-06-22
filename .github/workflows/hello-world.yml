@@ -6,6 +6,11 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World!"
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
         
       - name: Secret Scanning
         run: echo "Secret Scanning"
