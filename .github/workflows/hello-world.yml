@@ -19,7 +19,7 @@ jobs:
         run: echo "SAST"
         
       - name: Docker Image
-        run: echo "Docker Image"
+        run: docker build -t santhoshnc/cf-sysfoo .
         
       - name: DockerHub
         run: echo "DockerHub"
