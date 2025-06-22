@@ -29,6 +29,15 @@ jobs:
 
       - name: DockerHub
         run: echo "DockerHub"
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: DockerHub
+        run: docker push habeebr1972/cf-sysfoo:latest
         
       - name: DAST - ZAP
         run: echo "DAST - ZAP"
