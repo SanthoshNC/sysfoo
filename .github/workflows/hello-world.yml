@@ -26,6 +26,14 @@ jobs:
         with:
          image-ref: 'docker.io/habeebr1972/cf-sysfoo:latest'
          format: 'table'
-         
+
+      - name: DockerHub
+        run: echo "DockerHub"
+        
       - name: DAST - ZAP
         run: echo "DAST - ZAP"
+
+      - name: DAST - ZAP
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: 'https://ginandjuice.shop/'
