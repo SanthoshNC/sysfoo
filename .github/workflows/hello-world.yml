@@ -20,11 +20,11 @@ jobs:
      
 
       - name: Docker Image
-        run: docker build -t santhoshnc/cf-sysfoo .
+        run: docker build -t habeebr1972/cf-sysfoo .
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
         with:
-         image-ref: 'docker.io/santhoshnc/cf-sysfoo:latest'
+         image-ref: 'docker.io/habeebr1972/cf-sysfoo:latest'
          format: 'table'
          
       - name: DAST - ZAP
