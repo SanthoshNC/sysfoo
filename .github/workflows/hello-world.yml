@@ -20,6 +20,13 @@ jobs:
         
       - name: Docker Image
         run: docker build -t santhoshnc/cf-sysfoo .
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'docker.io/santhoshnc/cf-sysfoo:latest'
+          format: 'table'
+          exit-code: '1'
         
       - name: DockerHub
         run: echo "DockerHub"
